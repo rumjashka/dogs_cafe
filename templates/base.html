@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dog's Cafe</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{url_for('static', filename='base.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='home.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='reservation.css')}}">
+    <link href="https://fonts.googleapis.com/css?family=Podkova:400,500,600,700,800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Amethysta" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+</head>
+<body>
+<div class="header">
+    <div class="header-text">
+    <span class="logo magic">
+        <a class="title" href="/" style="text-decoration: none">
+            <img src="static/img/logo.png" alt="Logo Dog's Cafe" height="150px" width="329px">
+            </a>
+    </span>
+        <span class="menu">
+        <a class="menu-item magic" href="{{ url_for('home') }}#menu" style="text-decoration: none">MENU</a>
+        <a class="menu-item magic" href="{{ url_for('home') }}#bar" style="text-decoration: none">BAR</a>
+        <a class="menu-item magic" href="{{ url_for('home') }}#reservation"
+           style="text-decoration: none">RESERVATION</a>
+        <a class="menu-item magic" href="{{ url_for('home') }}#social" style="text-decoration: none">SOCIAL</a>
+            <a class="menu-item magic" href="{{ url_for('home') }}#contact" style="text-decoration: none">CONTACT</a>
+
+    </span>
+    </div>
+</div>
+{% block content %}
+
+{% endblock %}
+
+<div class="bline"></div>
+<div class="c-content">
+    <div class="contact-info" id="contact">
+        <img class="menu-logo" src="static/img/contact-logo.png">
+        <div class="contact-content">
+            <div class="contact-text">
+                <ul class="address">
+                    <li>Meent 72a</li>
+                    <li>3011 JN Rotterdam</li>
+                    <li>T: 010-4148487</li>
+                </ul>
+                <div class="email">
+                    <p>Feel free to Drop us an email with any thoughts or suggestions right here:</p>
+                    <a href="mailto:info@@dogcafe.com" style="text-decoration: none">info@dogcafe.com</a>
+                </div>
+                <div class="love-beer">
+                    <p>love meat love beer :
+                        <br>
+                    <p>Sign up to our mailing list for news, deals + freebies</p>
+                </div>
+                <div class="sign-up-box">
+                    <form action="{{ url_for('contact') }}" method="post">
+                        <input placeholder="join dog's cafe" type="text" id="mail-email" name="email">
+                        <input type="submit" value="submit" id="mail-submit">
+                    </form>
+                </div>
+            </div>
+            <div class="map">
+                <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script>
+                <div style='overflow:hidden;height:366px;width:520px;'>
+                    <div id='gmap_canvas' style='height:366px;width:520px;'></div>
+                    <div>
+                        <small><a href="https://embedgooglemaps.com/">embedgooglemaps.com/ru embedgooglemaps.com/ru
+                            embedgooglemaps.com/ru embedgooglemaps.com/ru embedgooglemaps.com/ru embedgooglemaps.com/ru
+                            embedgooglemaps.com/ru embedgooglemaps.com/ru embedgooglemaps.com/ru
+                            embedgooglemaps.com/ru</a></small>
+                    </div>
+                    <div>
+                        <small><a href="https://promocode.com.ph/">Promocode Com Ph</a></small>
+                    </div>
+                    <style>#gmap_canvas img{max-width:none!important;background:none!important}</style>
+                </div>
+                <script type='text/javascript'>
+                    function init_map(){var myOptions = {zoom:15,center:new google.maps.LatLng(51.9224031,4.483388800000057),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(51.9224031,4.483388800000057)});infowindow = new google.maps.InfoWindow({content:'<strong>Dogs cafe</strong><br>Meent 72a  3011 JN Rotterdam <br>'});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);
+                </script>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="bline"></div>
+</body>
+</html>

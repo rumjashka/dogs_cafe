@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="book">
+        <div class="sorry">
+            We're full! Sorry...
+            Please choose another time or date!
+        </div>
+       <center> <a class="btn" href="{{ url_for('home') }}#reservation" style="color: white">Back</a></center>
+</div>
+
+
+{%endblock%}
